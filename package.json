@@ -1,0 +1,38 @@
+{
+  "name": "hexagons",
+  "version": "1.0.0",
+  "description": "Hexagons - SEND School Pupil Progress Tracking System",
+  "private": true,
+  "scripts": {
+    "postinstall": "git submodule update --init --recursive",
+    "install:all": "npm run install:backend && npm run install:frontend",
+    "install:backend": "cd hexagons-backend && npm install",
+    "install:frontend": "cd hexagons-client && npm install",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd hexagons-backend && npm test",
+    "test:frontend": "cd hexagons-client && npm run test:basic",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd hexagons-backend && npm run develop",
+    "dev:frontend": "cd hexagons-client && npm run develop",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd hexagons-backend && npm run build",
+    "build:frontend": "cd hexagons-client && npm run build",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd hexagons-backend && npm run start",
+    "start:frontend": "cd hexagons-client && npm run start",
+    "dev:staging": "cd hexagons-client && cross-env NEXT_PUBLIC_API_URL=https://backend.hexagons.app npm run develop"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-organization/hexagons.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  }
+}
