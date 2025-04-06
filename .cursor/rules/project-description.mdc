@@ -1,0 +1,89 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Hexagons - SEND School Pupil Progress Tracking System
+
+## Project Overview
+
+Hexagons is a comprehensive system for tracking pupil progress in Special Educational Needs and Disabilities (SEND) schools in the UK. The application allows educators to monitor and report on pupil achievement across various subjects, competencies, and skill areas.
+
+## Project Structure
+
+The project is divided into two main components:
+
+### Backend (hexagons-backend)
+
+- **Framework**: Strapi v4.11.0 (Headless CMS)
+- **Database**: PostgreSQL
+- **Main Content Types**:
+  - Pupils: Individual student records with properties and group associations
+  - Subjects: Various academic areas (core subjects, early development, functional skills, etc.)
+  - Groups: Class or cohort groupings for pupils
+  - Modules: Subject content organized by level
+  - Capabilities: Specific skills within modules
+  - Competencies: Achievement tracking for individual capabilities
+  - Levels: Progress tracking within modules
+  - Organizations: School or institution entities
+  - Targets: Custom learning objectives
+  - Snapshots: Point-in-time assessment records
+  
+- **Features**:
+  - GraphQL API for data access
+  - User authentication and permissions
+  - Email functionality via Nodemailer
+
+### Frontend (hexagons-client)
+
+- **Framework**: Next.js v12.1.1
+- **UI Libraries**: 
+  - Material UI v5.2.4
+  - Styled Components
+  - Framer Motion
+- **Data Fetching**: 
+  - GraphQL via graphql-request
+  - SWR for data caching
+  - Axios for REST API calls
+
+- **Main Features**:
+  - Authentication system (login, register, password reset)
+  - Pupil management and tracking
+  - Subject assessment and progress monitoring
+  - Group management
+  - Reporting dashboard
+  - Early development tracking
+  - Functional skills assessment
+  - Rainbow awards system
+  - Custom target setting and evaluation
+
+## Key Workflows
+
+1. **User Authentication**: Admin/teacher login with appropriate permissions
+2. **Pupil Management**: Adding, editing, and organizing pupils into groups
+3. **Assessment**: Recording pupil progress across subjects and competencies
+4. **Reporting**: Generating reports on individual and group progress
+5. **Target Setting**: Creating and monitoring custom learning targets
+
+## Technology Stack
+
+- **Backend**: 
+  - Node.js
+  - Strapi CMS
+  - PostgreSQL
+  - GraphQL
+  - JWT Authentication
+
+- **Frontend**:
+  - React
+  - Next.js
+  - Material UI
+  - TypeScript (partial implementation)
+  - SWR for data fetching
+  - Iron Session for authentication
+
+## Development Environment
+
+- Node.js environment with support for v14-16 (backend) and v22 (frontend)
+- Development servers run on local ports (Next.js frontend, Strapi backend)
+- Production deployment via Render (configured in render.yaml)

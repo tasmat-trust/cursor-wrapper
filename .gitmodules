@@ -1,0 +1,6 @@
+[submodule "hexagons-client"]
+	path = hexagons-client
+	url = git@github.com:tasmat-trust/hexagons.git
+[submodule "hexagons-backend"]
+	path = hexagons-backend
+	url = git@github.com:tasmat-trust/hexagons-backend.git
