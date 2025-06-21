@@ -81,9 +81,3 @@ The project is divided into two main components:
   - TypeScript (partial implementation)
   - SWR for data fetching
   - Iron Session for authentication
-
-## Development Environment
-
-- Node.js environment with support for v14-16 (backend) and v22 (frontend)
-- Development servers run on local ports (Next.js frontend, Strapi backend)
-- Production deployment via Render (configured in render.yaml)

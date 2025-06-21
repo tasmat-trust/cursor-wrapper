@@ -20,7 +20,8 @@
     "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "start:backend": "cd hexagons-backend && npm run start",
     "start:frontend": "cd hexagons-client && npm run start",
-    "dev:staging": "cd hexagons-client && cross-env NEXT_PUBLIC_API_URL=https://backend.hexagons.app npm run develop"
+    "dev:staging": "cd hexagons-client && cross-env NEXT_PUBLIC_API_URL=https://backend.hexagons.app npm run develop",
+    "prod:tasmat": "cd hexagons-client && cross-env NEXT_PUBLIC_API_URL=https://tasmat-backend.hexagons.app npm run develop"
   },
   "engines": {
     "node": ">=16.0.0"

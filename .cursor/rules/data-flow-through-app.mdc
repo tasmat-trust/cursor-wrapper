@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Data Flow Through the App
+
+## Component Rendering Chain for Assessment Pages
+
+The assessment page follows this component rendering chain:
+
+1. **PupilHexagonsView** renders **SubjectMainView**
+2. **SubjectMainView** renders **SetPupilSubjectLevel** (wrapped with WithCurrentLevel)
+3. **SetPupilSubjectLevel** renders **StagesTabsSingleSubject**
+4. **StagesTabsSingleSubject** renders **StagesTabs** (wrapped with WithModules)
+5. **StagesTabs** renders **LevelContent** inside TabPanel
+6. **LevelContent** renders **CapabilityTiles** (wrapped with WithCompetencies)
+7. **CapabilityTiles** renders **CapabilityTile** components with the `hex-{i}` data-test-id attributes
+
+## Key Points
+
+- Higher Order Components (HOCs) like `WithCompetencies`, `WithModules`, and `WithCurrentLevel` fetch data and pass it down
+- The hexagon elements that tests look for (`[data-test-id=hex-1]`, etc.) are only rendered if the entire chain works correctly
+- If any HOC fails to receive properly formatted data, the chain breaks and hexagons won't render
+- Data flows from GraphQL → HOCs → Components → DOM elements with test IDs
