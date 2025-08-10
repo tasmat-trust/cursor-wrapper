@@ -5,6 +5,14 @@ alwaysApply: false
 ---
 # Migrating and Fixing Cypress Tests
 
+
+## New feature since tests written:
+
+New Components: ScoreDisplay.js, Snapshots.js have been added.
+GraphQL Queries: The getLevels, getLevelsForOverview, and getLevel queries in queries/Pupils.ts have been updated to fetch targets data, which includes initial_score and target_score.
+Data Flow: The initialScore is being passed down through several components, including StagesTabs, LevelContent, and LevelStatus.
+New Utility: getLatestTarget.js is a new utility to process the new targets data.
+
 ## Background
 
 The Hexagons application was migrated from Strapi v3 to Strapi v4, which changed the GraphQL response format. The frontend uses a `flattenDataAttributes` utility to transform Strapi v4 responses into the format that components expect.
